@@ -6,7 +6,7 @@ on:
       - 'app.py'
       - 'Dockerfile'
     branches:
-      - main
+      - master
 
 jobs:
   build_and_push:
