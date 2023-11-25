@@ -8,11 +8,8 @@ from pydantic import BaseModel
 
 # Define a Pydantic model for request data validation
 class InputMode(BaseModel):
-    input: int
+    input: float
 
-class InputModel(BaseModel):
-    base: float
-    exponent: float
 
 # Create an instance of the FastAPI class
 app = FastAPI()
@@ -25,8 +22,3 @@ def square(data: InputMode):
 
     return {"squared_value": squared_value}
 
-def calculate_exponent(data: InputModel):
-    # Calculate the base to the power of the exponent
-    result = data.base ** data.exponent
-
-    return {"result": result}
