@@ -79,17 +79,20 @@ docker run -it -p 8000:8000 my-python-app
 - Add the following content to the file:
 
 ```yaml
-name: Build and Push Docker
+name: Build and Push Docker Image
 
 on:
   push:
     paths:
       - 'app.py'
       - 'Dockerfile'
+    branches:
+      - main
 
 jobs:
   build_and_push:
     runs-on: ubuntu-latest
+
     steps:
       - name: Check Out Repo
         uses: actions/checkout@v2
@@ -110,6 +113,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository }}/my-python-app:${{ github.run_id }}-${{ format('{0:yyyyMMdd-HHmm}', utcNow()) }}
+          tags: ghcr.io/${{ github.repository }}/my-python-app:${{ github.run_number }}
 ```
 
