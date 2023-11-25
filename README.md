@@ -86,8 +86,9 @@ on:
     paths:
       - 'app.py'
       - 'Dockerfile'
+      - '.github/workflows/build-and-push-docker-image.yml'
     branches:
-      - main
+      - master
 
 jobs:
   build_and_push:

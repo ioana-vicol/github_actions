@@ -5,6 +5,7 @@ on:
     paths:
       - 'app.py'
       - 'Dockerfile'
+      - '.github/workflows/build-and-push-docker-image.yml'
     branches:
       - master
 

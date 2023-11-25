@@ -10,7 +10,6 @@ from pydantic import BaseModel
 class InputMode(BaseModel):
     input: float
 
-
 # Create an instance of the FastAPI class
 app = FastAPI()
 
